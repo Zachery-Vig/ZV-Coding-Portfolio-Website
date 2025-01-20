@@ -1,4 +1,16 @@
 <style>
+  body {
+    position: relative;
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+        right: 600px;
+    }
+    @keyframes fadeIn {
+        to {
+          right: 0px;
+          opacity: 1;
+        }
+    }
 a:link {color: rgb(0, 220, 0);}
 a:visited {color: rgb(0, 220, 0);}
 a:hover {color: green; font-weight: bold;}
