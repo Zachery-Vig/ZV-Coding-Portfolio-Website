@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.hide {
-  margin-top: 50px;
-  width: 100px;
-  transition: margin-top 0.5s;
-}
-    
-.contain:hover  .hide{
-  margin-top:20px;
-}
-</style>
+  <meta charset="utf-8" />
+  <title>Fade Out with Transitionend</title>
+  <style>
+    /* Transition on body opacity */
+    body {
+      opacity: 1;
+      transition: opacity 1s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Class to apply to trigger the fade out */
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Display an Element on Hover</h2>
+  <button id="fadeButton">Go to new page</button>
 
-<div style="width: 100px; height:100px;" class="contain">
-<img src="images/gh.png" class="hide"></img>
-<p class="myDIV" style="margin:0;">Hover over me.</p>
-</div>
-<p>eee</p>
+  <script>
+    const fadeButton = document.getElementById('fadeButton');
+
+    // Listen for the transition to end on the body
+    document.body.addEventListener('transitionend', () => {
+      // Once the fade out completes, navigate
+      window.location.href = 'newPage.html';
+    });
+
+    fadeButton.addEventListener('click', () => {
+      document.body.classList.add('fade-out');
+    });
+  </script>
+
 </body>
 </html>
