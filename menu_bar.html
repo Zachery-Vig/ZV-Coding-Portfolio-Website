@@ -1,13 +1,17 @@
 <style>
   body {
     position: relative;
-    opacity: 0;
     animation: fadeIn 1.5s forwards;
-    right: 1000px;
+    opacity: 0;
+    transform: translateX(-80vw);
   }
   @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-80vw);
+    }
     to {
-      right: 0px;
+      transform: translateX(0vh);
       opacity: 1;
     }
   }
